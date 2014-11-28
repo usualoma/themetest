@@ -1,0 +1,106 @@
+<!DOCTYPE html><mt:include module="config">
+<html lang="<mt:bloglanguage>" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="<mt:publishcharset>">
+<title><mt:blogname encode_html="1"></title>
+<meta name="description" content="<mt:blogdescription remove_html="1" encede_html="1">">
+<meta name="keywords" content="<mt:getvar name="metakeywords">">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="<mt:blogurl encode_html="1">images/favicon.ico">
+<link rel="start" href="<mt:blogurl encode_html="1">">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<mt:link template="feed_recent">">
+<mt:CanonicalLink>
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="<mt:blogLanguage setvar="blog_lang"><mt:if name="blog_lang" eq="ja">ja_JP<mt:else><mt:Var name="blog_lang"></mt:if>">
+<meta property="og:title" content="<mt:blogname encode_html="1">">
+<meta property="og:url" content="<mt:blogurl encode_html="1">">
+<meta property="og:description" content="<mt:blogdescription remove_html="1" encede_html="1">">
+<meta property="og:site_name" content="<mt:blogname encode_html="1">">
+<meta property="og:image" content="<mt:blogurl encode_html="1">images/ogimage.png">
+<!-- Microdata -->
+<meta itemprop="description" content="<mt:blogdescription remove_html="1" encede_html="1">">
+<link itemprop="url" href="<mt:blogurl encode_html="1">">
+<link itemprop="image" href="<mt:blogurl encode_html="1">images/ogimage.png">
+<mt:include module="common_stylesheet">
+<mt:include module="common_head_js">
+</head>
+
+<mt:setvarblock name="thispage">TOP</mt:setvarblock>
+
+<body id="sitetop">
+
+<mt:include module="header">
+
+<section id="mainvisual">
+  <div class="container">
+    <h2><img src="<mt:blogurl encode_html="1">images/main-img.png" alt=""></h2>
+    <p id="main-text">Movable Typeデザインテーマ「Simple Corporate」のデモサイトです。<br />
+「Simple Corporate」は企業サイトのようなウェブサイトを作成できるレスポンシブ Web デザインを採用したテーマです。
+    </p>
+    <div class="btn-group">
+      <a href="" class="btn btn-primary btn-lg">詳細はこちら&nbsp;<i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section id="top-about">
+
+<mt:Folders>
+  <mt:setvarblock name="description"><mt:folderdescription></mt:setvarblock>
+  <mt:unless name="description" eq="footer_link">
+  <section class="webpages">
+    <div class="container">
+      <h3><mt:FolderLabel></h3>
+      <p class="webpage-lead"><mt:folderdescription></p>
+      <mt:pages>
+      <mt:If name="__counter__" op="%" value="4" eq="1"><div class="row"></mt:If>
+        <div class="col-sm-4">
+          <h4><i class="fa fa-lg glyphicon fa-tag"></i><mt:pagetitle></h4>
+          <p><mt:pageexcerpt></p>
+          <p class="page-detail"><a href="<mt:pagepermalink>" class="btn btn-primary">詳細を見る</a></p>
+        </div>
+      <mt:If name="__counter__" op="%" value="4" eq="0"></div></mt:If>
+      <mt:If name="__last__"><mt:If name="__counter__" op="%" value="4" ne="0"></div></mt:If></mt:If>
+      </mt:pages>
+    </div>
+  </section>
+  </mt:unless>
+</mt:Folders>
+
+</section>
+
+<section id="top-news">
+  <div class="container">
+    <h3>最新ニュース</h3>
+    <div class="row">
+    <mt:entries lastn="4">
+      <a href="<mt:entrypermalink>" class="col-sm-3">
+        <mt:EntryAssets type="image" sort_order="ascend" limit="1">
+           <figure><img src="<$mt:AssetThumbnailURL width="320"$>" alt="<mt:entrytitle>"></figure>
+        <mt:Else>
+           <figure class="noimage"><span>No image</span></mt:unless></figure>
+        </mt:EntryAssets>
+        <div class="entry-detail">
+          <h1><mt:entrytitle></h1>
+          <p class="entry-excerpt"><mt:entryexcerpt></p>
+        </div>
+      </a>
+    </mt:entries>
+    </div>
+  </div>
+</section>
+
+<mt:include module="footer">
+
+<mt:include module="common_bottom_js">
+<script src="<mt:blogrelativeurl>js/jquery.tile.min.js"></script>
+<script type="application/javascript">
+$(window).load(function(){
+    $('#top-news .col-sm-3').tile(4);
+    $('.webpages .col-sm-4').tile(3);
+});
+</script>
+  
+</body>
+</html>
