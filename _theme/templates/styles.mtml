@@ -187,12 +187,11 @@ margin-bottom: 1em;
                  LOWER CONTENT
 ------------------------------------------ */
 
-<mt:if name="main-bg"><mt:assets tag="@MAIN_BACKGROUND" limit="1"><mt:assetthumbnailurl></mt:assets></mt:if>
 
 #mainvisual-lower {
 position: relative;
 padding: 3.5em 0;
-background: url(<mt:if name="main-bg"><mt:assets type="image" tag="@MAIN_BACKGROUND" limit="1"><mt:assetthumbnailurl></mt:assets><mt:else><mt:blogrelativeurl>/images/bg-top-main.png</mt:if>) no-repeat center bottom;
+background: url(<mt:blogurl>/images/bg-top-main.png) no-repeat center bottom;
 background-size: cover;
 color: #fff;
 text-shadow: 0 1px 0px #000;
@@ -508,7 +507,7 @@ padding-top: 0;
 width: 100%;
 min-height: 300px;
 padding: 8em 0 3em 0;
-background: url(<mt:if name="main-bg"><mt:assets type="image" tag="@MAIN_BACKGROUND" limit="1"><mt:assetthumbnailurl></mt:assets><mt:else><mt:blogrelativeurl>/images/bg-top-main.png</mt:if>) no-repeat center bottom;
+background: url(<mt:blogurl>/images/bg-top-main.png) no-repeat center bottom;
 background-size: cover;
 text-align: center;
 border-bottom: solid 1px #e9e9e9;
