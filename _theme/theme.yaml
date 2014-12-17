@@ -1,5 +1,5 @@
 id: simplecorporate
-test: test9
+test: test10
 elements:
   blog_static_files:
     component: ~
