@@ -6,6 +6,7 @@ elements:
     data:
       - images
       - js
+      - etc
     importer: blog_static_files
   template_set:
     component: ~
