@@ -72,6 +72,9 @@ elements:
             label: common_bottom_js
           template_11911:
             label: footer
+          icon:
+            label: icon
+            outfile: icon.mtml
         page:
           page:
             label: ウェブページ
