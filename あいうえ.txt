@@ -1,9 +1,1 @@
-abc
-def
-ghi
-jkl
-xyz
-123
-456
-789
-ert
+abcdefg
